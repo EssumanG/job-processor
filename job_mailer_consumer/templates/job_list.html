@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #7e7b7b;
+        }
+
+        button {
+          color: rgb(255, 249, 249);
+          background-color: blue;
+          border-radius: 20px;
+          padding: 10px;
+        }
+        </style>
+</head>
+<body>
+    <h3>Hello there, here are some available jobs per your requirements!..</h3>
+    <hr>
+    <h3>Good Luck in your job Application!!! </h3>
+    <table>
+      <tr>
+        <th>Company</th>
+        <th>Company URL</th>
+        <th>Job Title</th>
+        <th>Job Location</th>
+        <th>Job Url</th>
+      </tr>
+
+      {% for job in  job_list  %}
+      <tr>
+        <td>{{ job.company_name }}</td>
+        <td>{{ job.linkedin_company_url_cleaned }}</td>
+        <td>{{ job.job_title }}</td>
+        <td>{{ job.job_location }}</td>
+        <td>{{ job.linkedin_job_url_cleaned }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h4>Click on the subscribe button below for more job opportunities</h4><button type="submit" > Subscribe</button> <span>[This feature is yet to be active....]</span>
+</body>
+</html>
